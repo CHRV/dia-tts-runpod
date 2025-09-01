@@ -1,0 +1,28 @@
+[project]
+name = "dia-tts"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11.7",
+    # "nari-tts @ git+https://github.com/nari-labs/dia.git@61ae8e039276eca622fc27db2c1ead1eaf417e6c",
+    "nari-tts @ git+https://github.com/nari-labs/dia.git@0790141162f3984844bb397fd67e5afdaeed3914",
+    "runpod>=1.7.13",
+    "torch==2.6.0",
+    "torchaudio==2.6.0",
+]
+
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchaudio = [
+    { index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
