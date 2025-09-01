@@ -16,7 +16,7 @@ COPY ./pyproject.toml .
 COPY ./uv.lock .
 RUN uv sync --locked
 
-COPY .handler.py .
+COPY ./handler.py .
 
 CMD ["uv", "run", "handler.py"]
 
