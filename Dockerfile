@@ -20,6 +20,8 @@ RUN --mount=type=bind,source=uv.lock,target=uv.lock \
 
 COPY . .
 
+RUN ldconfig /usr/local/cuda-12.6/compat/
+
 RUN uv sync --locked --no-cache
 
 CMD ["uv", "run", "handler.py"]
