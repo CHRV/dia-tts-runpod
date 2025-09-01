@@ -6,8 +6,9 @@ readme = "README.md"
 requires-python = "==3.10.*"
 dependencies = [
     "huggingface-hub>=0.30.2",
-    "pydantic>=2.11.3",
+    "llvmlite>=0.44.0",
     "nari-tts @ git+https://github.com/nari-labs/dia.git@61ae8e039276eca622fc27db2c1ead1eaf417e6c",
+    "pydantic>=2.11.3",
     "runpod>=1.7.13",
     "torch==2.6.0",
     "torchaudio==2.6.0",

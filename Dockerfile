@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     ffmpeg \
     libsndfile1 \
     build-essential \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=ghcr.io/astral-sh/uv:0.8.14 /uv /uvx /bin/
 ENV UV_COMPILE_BYTECODE=1
