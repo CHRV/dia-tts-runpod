@@ -9,14 +9,18 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=ghcr.io/astral-sh/uv:0.8.14 /uv /uvx /bin/
+ENV UV_COMPILE_BYTECODE=1
 
 WORKDIR /app
 
-COPY ./pyproject.toml .
-COPY ./uv.lock .
-RUN uv sync --locked
 
-COPY ./handler.py .
+RUN --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --locked --no-install-project --no-cache
+
+COPY . .
+
+RUN uv sync --locked --no-cache
 
 CMD ["uv", "run", "handler.py"]
 
