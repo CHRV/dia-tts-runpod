@@ -6,6 +6,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     ffmpeg \
     libsndfile1 \
     build-essential \
+    cusparselt-cuda-12 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=ghcr.io/astral-sh/uv:0.8.14 /uv /uvx /bin/
