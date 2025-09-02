@@ -44,7 +44,8 @@ def load_model() -> Dia:
     if DIA_MODEL is None:
         print("Loading Dia model...")
 
-        DIA_MODEL = Dia.from_pretrained(MODEL_NAME, compute_dtype=COMPUTE_DTYPE, device="cuda")
+        # DIA_MODEL = Dia.from_pretrained(MODEL_NAME, compute_dtype=COMPUTE_DTYPE, device="cuda")
+        DIA_MODEL = Dia.from_pretrained(MODEL_NAME, device="cuda")
         print("Model loaded successfully")
 
     return DIA_MODEL
