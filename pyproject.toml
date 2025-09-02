@@ -6,7 +6,8 @@ readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [
     "huggingface-hub>=0.30.2",
-    "nari-tts @ git+https://github.com/nari-labs/dia.git@61ae8e039276eca622fc27db2c1ead1eaf417e6c",
+    # "nari-tts @ git+https://github.com/nari-labs/dia.git@61ae8e039276eca622fc27db2c1ead1eaf417e6c",
+    "nari-tts @ git+https://github.com/nari-labs/dia.git@0790141162f3984844bb397fd67e5afdaeed3914",
     "numba==0.61.2",
     "pydantic>=2.11.3",
     "runpod>=1.7.13",

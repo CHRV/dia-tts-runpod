@@ -16,8 +16,8 @@ from pydub import AudioSegment
 
 # Global model variable
 
-MODEL_NAME = os.getenv("MODEL_NAME", "nari-labs/Dia-1.6B-0626")
-# MODEL_NAME = os.getenv("MODEL_NAME", "nari-labs/Dia-1.6B")
+# MODEL_NAME = os.getenv("MODEL_NAME", "nari-labs/Dia-1.6B-0626")
+MODEL_NAME = os.getenv("MODEL_NAME", "nari-labs/Dia-1.6B")
 COMPUTE_DTYPE = os.getenv("COMPUTE_DTYPE", "float16")
 
 
